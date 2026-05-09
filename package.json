@@ -1,0 +1,21 @@
+{
+  "name": "pratica-oo",
+  "version": "1.0.0",
+  "description": "Projeto prático curso Programação Orientada a Objetos - FullCycle",
+  "license": "ISC",
+  "author": "Esdras Franca <esdras.franca.85@gmail.com>",
+  "type": "module",
+  "main": "src/main.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "devDependencies": {
+    "@types/express": "^5.0.6",
+    "@types/node": "^25.6.1",
+    "tsx": "^4.21.0",
+    "typescript": "^6.0.3"
+  },
+  "dependencies": {
+    "express": "^5.2.1"
+  }
+}
