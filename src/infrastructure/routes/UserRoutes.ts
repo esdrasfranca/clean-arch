@@ -5,26 +5,24 @@ export function createUserRoutes(): Router {
 
     const router = Router();
 
-    router.get('/', (req, res) => {
-        const result = new UserController().getAll(req, res);
-        return res.json({ "data": result });
-
+    router.get('/', async (req, res) => {
+        await new UserController().getAll(req, res);
     });
 
-    router.post('/', (req, res) => {
-        new UserController().create(req, res);
+    router.post('/', async (req, res) => {
+        await new UserController().create(req, res);
     });
 
-    router.get('/:id', (req, res) => {
-        res.json({ message: 'User fetched successfully' })
+    router.get('/:id', async (req, res) => {
+        await new UserController().getById(req, res);
     });
 
-    router.delete('/:id', (req, res) => {
-        res.json({ message: 'User deleted successfully' })
+    router.delete('/:id', async (req, res) => {
+        await new UserController().delete(req, res);
     });
 
-    router.put('/:id', (req, res) => {
-        res.json({ message: 'User updated successfully' })
+    router.put('/:id', async (req, res) => {
+        await new UserController().update(req, res);
     });
 
 

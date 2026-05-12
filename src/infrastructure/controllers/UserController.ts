@@ -64,6 +64,7 @@ export class UserController {
 
     async update(req: Request, res: Response) {
         const id = req.params.id;
+
         if (typeof id !== 'string') {
             res.status(400).json({ message: 'Invalid id' });
             return;
@@ -71,10 +72,11 @@ export class UserController {
 
         const useCase = new UpdateUserUseCase(this.repository);
         const userDto = new UpdateUserDTO(
+            id,
             req.body.name,
             req.body.email,
-            req.body.password,
         );
+
         await useCase.execute(userDto);
 
         res.json({ message: 'User updated successfully' });
